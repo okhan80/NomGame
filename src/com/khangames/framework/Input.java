@@ -7,7 +7,7 @@ import java.util.List;
  * User: omarkhan
  * Date: 1/9/12
  * Time: 2:28 PM
- * To change this template use File | Settings | File Templates.
+ * How the user is able to interact with the game through keyboard or touch
  */
 public interface Input {
     public static class KeyEvent {
@@ -29,9 +29,19 @@ public interface Input {
         public int x, y;
         public int pointer;
     }
-    
+
+    /**
+     * Checks to see if the key is pressed
+     * @param keyCode - the pressed key's keycode
+     * @return - boolean
+     */
     public boolean isKeyPressed(int keyCode);
-    
+
+    /**
+     * Checks to see if there is a touch on the screen
+     * @param pointer - First touch is assigned 0, and if multi-touch is supported this will designate the other touches
+     * @return - boolean
+     */
     public boolean isTouchDown(int pointer);
     
     public int getTouchX(int pointer);
@@ -43,9 +53,17 @@ public interface Input {
     public float getAccelY();
     
     public float getAccelZ();
-    
+
+    /**
+     * Used for Event-based handling where all previous input is recorded and retained
+     * @return - List<KeyEvent>
+     */
     public List<KeyEvent> getKeyEvents();
-    
+
+    /**
+     * Used for Event-based handling where all previous touches are recorded and retained
+     * @return - List<TouchEvent>
+     */
     public List<TouchEvent> getTouchEvents();
 
 }

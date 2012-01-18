@@ -9,7 +9,7 @@ import java.io.OutputStream;
  * User: omarkhan
  * Date: 1/9/12
  * Time: 2:35 PM
- * To change this template use File | Settings | File Templates.
+ * Creating InputStream and OutputStream instances for reading and writing data
  */
 public interface FileIO {
     public InputStream readAsset(String fileName) throws IOException;
